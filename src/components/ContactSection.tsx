@@ -7,7 +7,7 @@ export function ContactSection() {
 
     return (
         <section className="contact_section layout_padding">
-            <div className="container-fluid">
+            <div id="contact" className="container-fluid">
                 <div className="row">
                     <div className="col-md-5 col-lg-4 offset-md-1">
                         <div className="form_container">

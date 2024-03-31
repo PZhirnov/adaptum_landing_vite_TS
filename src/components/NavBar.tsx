@@ -7,7 +7,7 @@ export function NavBar() {
         <header className="header_section">
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg custom_nav-container ">
-                    <a className="navbar-brand" href="index.html">
+                    <a className="navbar-brand" href="#">
                         <span>
                             ADAPTUM
                         </span>
@@ -19,16 +19,16 @@ export function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav  ">
                             <li className="nav-item active">
-                                <a className="nav-link" href="index.html">Главная <span class="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/">Главная <span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="about.html">Цели проекта</a>
+                                <a className="nav-link" href="#goals">Цели проекта</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="service.html">Команда</a>
+                                <a className="nav-link" href="#case-section">Примеры</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="contact.html">Контакты</a>
+                                <a className="nav-link" href="#contact">Контакты</a>
                             </li>
                         </ul>
                         <div className="quote_btn-container">
