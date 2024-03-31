@@ -17,7 +17,7 @@ export function AboutSection() {
                     <div className="col-md-6">
                         <div className="detail-box">
                             <div className="heading_container">
-                                <h2>
+                                <h2 id='goals'>
                                     Цели проекта
                                 </h2>
                             </div>

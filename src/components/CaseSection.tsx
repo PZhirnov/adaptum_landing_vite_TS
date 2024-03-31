@@ -8,7 +8,7 @@ export function CaseSection() {
 
     return (
         <section className="case_section layout_padding">
-            <div className="container">
+            <div id="case-section" className="container">
                 <div className="heading_container">
                     <h2>
                         Примеры использования
