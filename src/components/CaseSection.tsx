@@ -22,7 +22,7 @@ export function CaseSection() {
                             </div>
                             <div className="detail-box">
                                 <h5>
-                                    Sit amet consectetur adipisicing elit
+                                    Выгоды для компании от адаптации персонала
                                 </h5>
                                 <p>
                                     Alteration in some form, by injected humour, or randomised words which don't look even slightly
@@ -44,7 +44,7 @@ export function CaseSection() {
                             </div>
                             <div className="detail-box">
                                 <h5>
-                                    Excepturi placeat nihil eos maxime
+                                    Влияние качества подготовки персонала на прибыль
                                 </h5>
                                 <p>
                                     Alteration in some form, by injected humour, or randomised words which don't look even slightly
