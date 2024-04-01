@@ -28,7 +28,6 @@ function App() {
       <div className="hero_area">
         <NavBar />
         <SliderSection />
-
       </div>
       <ServiceSection />
       <AboutSection />

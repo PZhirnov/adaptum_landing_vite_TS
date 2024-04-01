@@ -8,7 +8,7 @@ import Positive from '../assets/images/positive.svg';
 import Money from '../assets/images/money.svg';
 
 
-export function AboutSection() {
+export function AboutSection({ handleOpenModal }) {
 
     return (
         <section className="about_section layout_padding">
@@ -26,7 +26,7 @@ export function AboutSection() {
                                 процедурами и корпоративной культурой, но и формирование комфортной психологической атмосферы,
                                 способствующей личностному и профессиональному развитию.
                             </p>
-                            <a href="">
+                            <a href="#" onClick={handleOpenModal}>
                                 Задать вопрос
                             </a>
                         </div>
