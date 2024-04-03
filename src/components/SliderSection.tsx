@@ -1,4 +1,8 @@
 import { MouseEvent } from 'react';
+import { useState } from 'react';
+
+
+import Modal from './Modal';
 
 
 import SimpleOnboarding from '../assets/images/simple_onboarding.png'
@@ -6,10 +10,14 @@ import GoodStaffHealth from '../assets/images/good_staff_health.png'
 import Economy from '../assets/images/economy.png'
 
 
-export function SliderSection() {
+
+
+export function SliderSection({ handleOpenModal }) {
+
 
     return (
         <section className="slider_section ">
+            {/* <Modal show={showModal} onCloseButtonClick={closeModal} /> */}
             <div id="customCarousel1" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -30,7 +38,7 @@ export function SliderSection() {
                                             эффективно
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
+                                            <a href="#" className="btn1" onClick={handleOpenModal}>
                                                 Оставить заявку
                                             </a>
                                         </div>
@@ -56,7 +64,7 @@ export function SliderSection() {
                                             Развивайте автоматизацию процесса наставничества. Мотивируют сотрудников на продуктивную работу.
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
+                                            <a href="#" className="btn1" onClick={handleOpenModal}>
                                                 Оставить заявку
                                             </a>
                                         </div>
@@ -82,7 +90,7 @@ export function SliderSection() {
                                             Дает возможность оперативного контроля процессов развития персонала
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
+                                            <a href="#" className="btn1" onClick={handleOpenModal}>
                                                 Оставить заявку
                                             </a>
                                         </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
@@ -16,6 +17,8 @@ import './css/style.css'
 import { NavBar } from './components/NavBar.tsx';
 import Main from './pages/Main.tsx'
 import { FooterContainer } from './components/FooterContainer.tsx';
+
+
 
 
 

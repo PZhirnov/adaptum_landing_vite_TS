@@ -1,4 +1,6 @@
-import { MouseEvent } from 'react';
+// import { MouseEvent } from 'react';
+import { ReactNode } from "react";
+
 
 import ConstructorIcon from "../assets/images/constructor_icon.svg";
 import RepoPlansIcon from "../assets/images/repo_plans_icon.svg";
@@ -9,8 +11,12 @@ import EventIcon from "../assets/images/event_icon.png";
 import BiIcon from "../assets/images/bi_icon.svg";
 import ChatIcon from "../assets/images/chat_icon.svg";
 
+interface Props {
+    handleOpenModal?: ReactNode
+}
 
-export function ServiceSection() {
+
+export function ServiceSection({ handleOpenModal }: Props) {
 
     return (
         <section className="service_section layout_padding">
@@ -36,7 +42,7 @@ export function ServiceSection() {
                                 <p>
                                     Создание дорожной карты процесса онбординга и адаптации
                                 </p>
-                                <a href="">
+                                <a href="#" onClick={handleOpenModal}>
                                     <span>
                                         Узнать больше
                                     </span>
@@ -57,7 +63,7 @@ export function ServiceSection() {
                                 <p>
                                     Публикуйте созданные планы в общем доступе и переиспользуйте наработки
                                 </p>
-                                <a href="">
+                                <a href="#" onClick={handleOpenModal}>
                                     <span>
                                         Узнать больше
                                     </span>
@@ -78,7 +84,7 @@ export function ServiceSection() {
                                 <p>
                                     Создавайте и управляйте группами адаптации на базе созданных планов
                                 </p>
-                                <a href="">
+                                <a href="#" onClick={handleOpenModal}>
                                     <span>
                                         Узнать больше
                                     </span>
@@ -99,7 +105,7 @@ export function ServiceSection() {
                                 <p>
                                     Прохождение этапов онбординга и адаптации сотрудником
                                 </p>
-                                <a href="">
+                                <a href="#" onClick={handleOpenModal}>
                                     <span>
                                         Узнать больше
                                     </span>
@@ -120,7 +126,7 @@ export function ServiceSection() {
                                 <p>
                                     Управляйте группами сотрудников и получайте оценку их работы
                                 </p>
-                                <a href="">
+                                <a href="#" onClick={handleOpenModal}>
                                     <span>
                                         Узнать больше
                                     </span>
@@ -183,7 +189,7 @@ export function ServiceSection() {
                                 <p>
                                     Быстрая связь с наставником или руководителем на всех этапах адаптации
                                 </p>
-                                <a href="">
+                                <a href="#" onClick={handleOpenModal}>
                                     <span>
                                         Узнать больше
                                     </span>
@@ -195,7 +201,7 @@ export function ServiceSection() {
 
                 </div>
                 <div className="btn-box">
-                    <a href="">
+                    <a href="#" onClick={handleOpenModal}>
                         Оставить заявку
                     </a>
                 </div>

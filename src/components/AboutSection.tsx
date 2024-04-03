@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react';
+import { ReactNode } from "react";
 
 
 import AboutImg from '../assets/images/about-img.png';
@@ -8,7 +9,12 @@ import Positive from '../assets/images/positive.svg';
 import Money from '../assets/images/money.svg';
 
 
-export function AboutSection() {
+interface Props {
+    handleOpenModal?: ReactNode
+}
+
+
+export function AboutSection({ handleOpenModal }: Props) {
 
     return (
         <section className="about_section layout_padding">
@@ -26,7 +32,7 @@ export function AboutSection() {
                                 процедурами и корпоративной культурой, но и формирование комфортной психологической атмосферы,
                                 способствующей личностному и профессиональному развитию.
                             </p>
-                            <a href="">
+                            <a href="#" onClick={handleOpenModal}>
                                 Задать вопрос
                             </a>
                         </div>
