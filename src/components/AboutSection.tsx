@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react';
+import { ReactNode } from "react";
 
 
 import AboutImg from '../assets/images/about-img.png';
@@ -8,7 +9,12 @@ import Positive from '../assets/images/positive.svg';
 import Money from '../assets/images/money.svg';
 
 
-export function AboutSection({ handleOpenModal }) {
+interface Props {
+    handleOpenModal?: ReactNode
+}
+
+
+export function AboutSection({ handleOpenModal }: Props) {
 
     return (
         <section className="about_section layout_padding">

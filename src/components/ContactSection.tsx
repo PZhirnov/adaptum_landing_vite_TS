@@ -1,9 +1,46 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useState } from 'react';
+
+import axios from 'axios';
+
+
 import GoodStaffHealth from '../assets/images/good_staff_health.png'
 
 
 
 export function ContactSection() {
+
+    const [data, setData] = useState({ name: "", email: "", mobile: "", comment: "" });
+    const [response, setResponse] = useState("");
+    const [errorMsg, setErrMsg] = useState("")
+
+
+    const handleSendFeedback = (event) => {
+        setData({
+            "name": event.target[0].value,
+            "email": event.target[1].value,
+            "mobile": event.target[2].value,
+            "comment": event.target[3].value,
+        })
+
+        console.log(data)
+        event.preventDefault();
+        axios.defaults.baseURL = 'http://79.174.80.178:8000'
+        const urlPostFeedback = '/api/main/feedback/push/'
+        axios
+            .post(urlPostFeedback, data)
+            .then((response) => {
+                setResponse(response.data);
+                setErrMsg("");
+            })
+            .catch((error) => {
+                console.log(error);
+                setErrMsg("Ошибка при вводе данных");
+
+            });
+    }
+
+
+
 
     return (
         <section className="contact_section layout_padding">
@@ -16,21 +53,21 @@ export function ContactSection() {
                                     Связаться с нами
                                 </h2>
                             </div>
-                            <form action="">
+                            <form action="" onSubmit={handleSendFeedback}>
                                 <div>
-                                    <input type="text" placeholder="Фаше имя " />
+                                    <input type="text" name="name" placeholder="Фаше имя " />
                                 </div>
                                 <div>
-                                    <input type="email" placeholder="Email" />
+                                    <input type="email" name="email" placeholder="Email" />
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Номер для связи" />
+                                    <input type="text" name="mobile" placeholder="Номер для связи" />
                                 </div>
                                 <div>
-                                    <input type="text" className="message-box" placeholder="Сообщение" />
+                                    <input type="text" name="comment" className="message-box" placeholder="Сообщение" />
                                 </div>
                                 <div className="d-flex ">
-                                    <button>
+                                    <button type="submit">
                                         Отправить
                                     </button>
                                 </div>

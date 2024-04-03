@@ -13,15 +13,6 @@ import Economy from '../assets/images/economy.png'
 
 
 export function SliderSection({ handleOpenModal }) {
-    const [showModal, setShowModal] = useState(false);
-    const openModal = () => {
-        alert('сработало окно')
-        setShowModal(true);
-    }
-
-    const closeModal = () => {
-        setShowModal(false);
-    }
 
 
     return (

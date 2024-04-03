@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import React from 'react'
+import axios from 'axios';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import './App.css'
@@ -41,10 +42,43 @@ const style = {
 
 
 function Main() {
+
+    const [data, setData] = useState({ name: "", email: "", company: "", mobile: "", comment: "" });
+    const [response, setResponse] = useState("");
+    const [errorMsg, setErrMsg] = useState("")
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+
+
+
+    const handleSendFeedback = (event) => {
+        setData({
+            "name": event.target[0].value,
+            "company": event.target[1].value,
+            "mobile": event.target[2].value,
+            "email": event.target[3].value,
+            "comment": event.target[4].value,
+        })
+        console.log(data)
+        event.preventDefault();
+        axios.defaults.baseURL = 'http://79.174.80.178:8000'
+        const urlPostFeedback = '/api/main/feedback/push/'
+        axios
+            .post(urlPostFeedback, data)
+            .then((response) => {
+                setResponse(response.data);
+                setErrMsg("");
+                setOpen(false);
+            })
+            .catch((error) => {
+                console.log(error);
+                setErrMsg("Ошибка при вводе данных");
+
+            });
+    }
 
     return (
         <div className='App'>
@@ -52,7 +86,7 @@ function Main() {
             <div className="hero_area">
                 <SliderSection handleOpenModal={handleOpen} />
             </div>
-            <ServiceSection />
+            <ServiceSection handleOpenModal={handleOpen} />
             <AboutSection handleOpenModal={handleOpen} />
             <CaseSection />
             <ClientSection />
@@ -72,12 +106,11 @@ function Main() {
                             Оставьте свои контактные данные
                         </Typography>
 
-                        <div style={{ 'display': 'flex', 'flexDirection': 'column', 'gap': '20px' }}>
-                            <TextField id="standard-basic" label="Введите ваше имя" variant="standard" />
-                            <TextField id="standard-basic" label="Наименование компании" variant="standard" />
-                            <TextField id="standard-basic" label="Номер для связи" variant="standard" />
-                            <TextField id="standard-basic" label="e-mail" variant="standard" type='email' />
-
+                        <form action="" style={{ 'display': 'flex', 'flexDirection': 'column', 'gap': '20px' }} onSubmit={handleSendFeedback}>
+                            <TextField id="standard-basic" name="name" label="Введите ваше имя" variant="standard" />
+                            <TextField id="standard-basic" name="company" label="Наименование компании" variant="standard" />
+                            <TextField id="standard-basic" name="mobile" label="Номер для связи" variant="standard" />
+                            <TextField id="standard-basic" name="email" label="email" variant="standard" type='email' />
 
                             <TextField
                                 id="filled-multiline-static"
@@ -86,15 +119,16 @@ function Main() {
                                 rows={4}
                                 defaultValue=""
                                 variant="filled"
+                                name="comment"
                             />
-                            <Button variant="contained" color="success">
+                            <p>{errorMsg}</p>
+                            <Button variant="contained" color="success" type="submit">
                                 Отправить сообщение
                             </Button>
-
-                        </div>
-
+                        </form>
 
 
+                        {/* </div> */}
                     </Box>
                 </Modal>
             </div>
